@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Styles</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .clickbox {
+        padding: 12px 24px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #555;
+        background-color: lightsteelblue;
+        border-radius: 10px;
+        box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+        border: none;
+        margin: 1vw;
+        transition: background-color 0.3s, margin 0.3s;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="clickbox" id="clickbox">Click Me</button>
+    <script>
+      document
+        .getElementById("clickbox")
+        .addEventListener("click", function () {
+          let clickbox = this;
+          let currentColor = getComputedStyle(clickbox).backgroundColor;
+          if (currentColor === "rgb(176, 196, 222)") {
+            clickbox.style.backgroundColor = "yellow";
+            clickbox.style.margin = "2vw";
+            console.log("Changed to yellow");
+          } else {
+            clickbox.style.backgroundColor = "lightsteelblue";
+            clickbox.style.margin = "1vw";
+            console.log("Changed to lightsteelblue");
+          }
+        });
+    </script>
+  </body>
+</html>
